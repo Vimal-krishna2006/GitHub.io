@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Review Component</title>
+    <link rel="stylesheet" href="Reviews.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="review-card">
+            <div class="review-header">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="/api/placeholder/80/80" alt="User Avatar">
+                    </div>
+                    <div class="user-details">
+                        <h3 class="user-name">Jane Smith</h3>
+                        <p class="review-date">March 25, 2025</p>
+                    </div>
+                </div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.5</span>
+                </div>
+            </div>
+            
+            <div class="review-content">
+                <h4 class="review-title">Exceeded my expectations!</h4>
+                <p class="review-text">The product arrived earlier than expected and the quality is outstanding. I was initially hesitant due to the price, but it's definitely worth every penny. The customer service was also exceptional when I had questions about the features.</p>
+            </div>
+            
+            <div class="review-photos">
+                <div class="photo-thumbnail">
+                    <img src="/api/placeholder/120/90" alt="Review Photo 1">
+                </div>
+                <div class="photo-thumbnail">
+                    <img src="/api/placeholder/120/90" alt="Review Photo 2">
+                </div>
+                <div class="photo-thumbnail">
+                    <img src="/api/placeholder/120/90" alt="Review Photo 3">
+                </div>
+            </div>
+            
+            <div class="review-footer">
+                <div class="helpful-section">
+                    <button class="helpful-btn"><i class="far fa-thumbs-up"></i> Helpful (24)</button>
+                    <button class="report-btn"><i class="far fa-flag"></i> Report</button>
+                </div>
+                <div class="verified-purchase">
+                    <i class="fas fa-check-circle"></i> Verified Purchase
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional review cards can be added here -->
+    </div>
+
+    <script>
+        // Add interactivity for helpful button
+        document.querySelector('.helpful-btn').addEventListener('click', function() {
+            let count = parseInt(this.innerText.match(/\d+/)[0]);
+            this.innerHTML = `<i class="fas fa-thumbs-up"></i> Helpful (${count + 1})`;
+            this.classList.add('active');
+            this.disabled = true;
+        });
+    </script>
+</body>
+</html>

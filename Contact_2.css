@@ -1,0 +1,264 @@
+        /* Base Styles */
+        :root {
+            --primary: #527DCC;
+            --primary-dark: #3A5F9B;
+            --light-bg: #FAEBd7;
+            /* antiquewhite */
+            --text-dark: #333;
+            --text-light: #fff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 1.5rem 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 ;
+        }
+        
+        .logo {
+            height: 60px;
+            width: auto;
+            transition: var(--transition);
+        }
+        
+        .logo:hover {
+            opacity: 0.9;
+        }
+        
+        .main-nav .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+        
+        .nav-link {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            padding: 0.5rem 1rem;
+            position: relative;
+            text-decoration: none;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-link.active {
+            color: var(--primary-color);
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        /* Hero Background */
+        .hero-bg {
+            height: 60vh;
+            background: url('Images/contact2.jpg') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        /* Contact Form */
+        .contact-container {
+            max-width: 1200px;
+            margin: -100px auto 50px;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 3rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            font-size: 2.2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(82, 125, 204, 0.2);
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 2rem;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Popup Styles */
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        #confirmationPopup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1001;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        #confirmationPopup h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        #confirmationPopup p {
+            margin-bottom: 1rem;
+        }
+
+        .popup-btn {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .popup-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Responsive Styles */
+        @media (min-width: 768px) {
+            .menu-icon {
+                display: none;
+            }
+
+            nav {
+                display: block;
+                position: static;
+                width: auto;
+                background: transparent;
+                box-shadow: none;
+            }
+
+            nav ul {
+                display: flex;
+                padding: 0;
+            }
+
+            nav li {
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-bg {
+                height: 40vh;
+            }
+
+            .form-container {
+                padding: 2rem;
+            }
+        }

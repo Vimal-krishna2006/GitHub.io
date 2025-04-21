@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growing and Shrinking Text</title>
+    <style>
+        #text {
+            font-size: 16px; /* Default size */
+            transition: font-size 0.5s ease; /* Smooth transition */
+        }
+
+        .grow {
+            font-size: 32px; /* Larger size */
+        }.shrink {
+            font-size: 12px; /* Smaller size */
+        }
+    </style>
+</head>
+<body>
+    <p id="text">Hover over me to see the magic!</p>
+
+    <script>
+        const text = document.getElementById("text");
+
+        // Add hover effects
+        text.addEventListener("mouseover", function() {
+            text.classList.add("grow"); // Increase text size
+            text.classList.remove("shrink");
+        });text.addEventListener("mouseout", function() {
+            text.classList.add("shrink"); // Decrease text size
+            text.classList.remove("grow");
+        });
+    </script>
+</body>
+</html>

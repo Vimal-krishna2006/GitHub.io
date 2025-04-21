@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Elegance Couture</title>
+    <link rel="stylesheet" href="Contact_2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <img class="menu-icon" src="Images/Hamb_icon.png" alt="Menu" id="menuToggle">
+        <img class="logo" src="Images/logo.png" alt="Elegance Couture">
+        
+            <ul>
+                <li><a href="Home_2.html">Home</a></li>
+                <li><a href="Order_2.html">Order</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero-bg"></div>
+
+    <div class="contact-container">
+        <div class="form-container">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="overlay"></div>
+
+    <div id="confirmationPopup">
+        <h2>Submitted Successfully</h2>
+        <p>We'll get back to you soon!</p>
+        <button class="popup-btn" onclick="hidePopup()">Okay</button>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showPopup();
+            this.reset();
+        });
+
+        // Popup functions
+        function showPopup() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('confirmationPopup').style.display = 'block';
+        }
+
+        function hidePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('confirmationPopup').style.display = 'none';
+        }
+    </script>
+    
+</script>
+<!--<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"> </script>
+
+-->
+<script type="module" src="Contact_2.js"></script>
+
+</body>
+</html>
